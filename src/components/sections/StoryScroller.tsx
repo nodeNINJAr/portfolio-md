@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { Fragment, ReactNode, useEffect, useState } from "react";
 
@@ -27,6 +27,7 @@ const panelPadding =
 export function StoryScroller({ blocks }: { blocks: StoryBlock[] }) {
   const panels = blocks.filter((b): b is StoryPanel => b.kind === "panel");
   const [active, setActive] = useState(panels[0]?.id);
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     const elements = panels
@@ -48,6 +49,7 @@ export function StoryScroller({ blocks }: { blocks: StoryBlock[] }) {
   }, []);
 
   const activePanel = panels.find((p) => p.id === active) ?? panels[0];
+  const activeIndex = Math.max(0, panels.findIndex((p) => p.id === active));
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-5">
@@ -64,22 +66,44 @@ export function StoryScroller({ blocks }: { blocks: StoryBlock[] }) {
                 className="absolute inset-0"
               >
                 {activePanel?.image && (
-                  <Image
-                    src={activePanel.image}
-                    alt={activePanel.label}
-                    fill
-                    sizes="40vw"
-                    className="object-cover"
-                  />
+                  <motion.div
+                    initial={reducedMotion ? false : { scale: 1.06 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={activePanel.image}
+                      alt={activePanel.label}
+                      fill
+                      sizes="40vw"
+                      className="object-cover"
+                    />
+                  </motion.div>
                 )}
                 <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                <div className="absolute top-[18%] bottom-12 left-[7%] right-[12%] flex items-end border-l-[8px] border-b-[8px] border-white/40 p-5 lg:p-8">
-                  <div className="max-w-full">
-                    <p className="image-panel-title break-words text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-black/15" />
+                <div className="absolute right-7 top-8 text-right sm:right-10 sm:top-10">
+                  <p className="text-[clamp(4rem,8vw,8rem)] font-black leading-[0.8] tracking-[-0.12em] text-transparent [text-stroke:1px_rgba(255,255,255,0.65)] [-webkit-text-stroke:1px_rgba(255,255,255,0.65)]">
+                    {String(activeIndex + 1).padStart(2, "0")}
+                  </p>
+                  <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.25em] text-white/65">
+                    of {String(panels.length).padStart(2, "0")} stories
+                  </p>
+                </div>
+                <div className="absolute bottom-7 left-6 right-6 sm:bottom-10 sm:left-10 sm:right-10">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-[#CCED00] px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.18em] text-black">
+                    <span className="h-1.5 w-1.5 rounded-full bg-black" />
+                    Abu Jubayer / Field Notes
+                  </div>
+                  <div className="mt-3 max-w-[18rem] rounded-2xl border border-white/25 bg-black/35 p-4 backdrop-blur-md sm:p-5">
+                    <p className="image-panel-title break-words text-[clamp(1.8rem,3.5vw,3.5rem)] text-white">
                       {activePanel?.label}
                     </p>
-                    <span className="mt-4 block h-1 w-3/4 max-w-60 bg-[#CCED00]" />
+                    <div className="mt-4 flex items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/65">
+                      <span className="h-px w-8 bg-[#CCED00]" />
+                      Explore the story
+                    </div>
                   </div>
                 </div>
               </motion.div>

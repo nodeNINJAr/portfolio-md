@@ -64,10 +64,15 @@ export function Header() {
           <a
             href="#home"
             aria-label="Abu Jubayer — Home"
-            className="flex min-w-[160px] flex-col justify-center bg-[#CCED00] px-6 text-[17px] uppercase leading-[0.95] tracking-tight sm:min-w-[200px] sm:px-8"
+            className="group flex min-w-[184px] items-center gap-3 bg-[#CCED00] px-5 text-black transition-colors hover:bg-white sm:min-w-[224px] sm:px-7"
           >
-            <span className="font-normal text-[#000000]">Abu</span>
-            <span className="font-bold text-[#000000]">Jubayer</span>
+            <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center border-2 border-black text-[11px] font-black leading-none tracking-[-0.08em]">
+              AJ
+            </span>
+            <span className="flex flex-col border-l border-black/30 pl-3 uppercase leading-none">
+              <span className="text-[10px] font-medium tracking-[0.2em]">Abu</span>
+              <span className="mt-1 text-[15px] font-black tracking-[0.08em]">Jubayer</span>
+            </span>
           </a>
 
           <div className="flex items-center px-4">
@@ -105,7 +110,7 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.45, ease }}
-              className="fixed top-0 right-0 h-full w-full lg:w-[30%] lg:min-w-[380px] bg-[#000000] text-white z-50 flex flex-col justify-center px-8 sm:px-12"
+              className="fixed top-0 right-0 h-full w-full overflow-y-auto lg:w-[30%] lg:min-w-[380px] bg-[#000000] text-white z-50 flex flex-col justify-start pt-20 pb-8 px-8 sm:px-12 lg:justify-center lg:pt-8"
             >
               <button
                 aria-label="Close menu"
@@ -124,7 +129,7 @@ export function Header() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.15 + i * 0.05, ease }}
-                    className="font-display text-3xl sm:text-4xl font-light py-3 border-b border-cream/10 hover:text-[#CCED00] transition-colors"
+                    className="font-display text-2xl sm:text-4xl font-light py-2 sm:py-3 border-b border-cream/10 hover:text-[#CCED00] transition-colors"
                   >
                     {link.label}
                   </motion.a>

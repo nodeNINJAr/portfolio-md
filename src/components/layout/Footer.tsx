@@ -23,7 +23,7 @@ function LinkedinIcon({ size = 17 }: { size?: number }) {
 
 export function Footer() {
   return (
-    <footer className="bg-[#191919] text-white">
+    <footer className="site-footer bg-[#191919] text-white">
       <div className="px-6 py-16 sm:px-10 lg:px-12 lg:py-24 xl:px-16">
         <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 xl:grid-cols-3 gap-10 xl:gap-6">
           <div>

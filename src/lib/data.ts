@@ -3,9 +3,8 @@ export const site = {
   title: "Senior Environmental Specialist",
   subtitle: "Environmental & Climate Consultant",
   location: "Dhaka, Bangladesh",
-  // TODO: replace with real contact details before launch
-  email: "hello@abujubayer.com",
-  phone: "+880 000 000 000",
+  email: "Jubayer.buet.bd@gmail.com",
+  phone: "+880 1711 459 532",
   linkedin: "https://linkedin.com/in/abujubayer",
   cvHref: "/Abu-Jubayer-CV.pdf",
 };
@@ -40,9 +39,10 @@ export const stats = [
     detail: "Working context",
   },
   {
-    value: "Research &",
+    value: "11",
+    number: 11,
     label: "Publications",
-    detail: "Contribution to the field",
+    detail: "Published and ongoing research",
   },
 ];
 
@@ -57,6 +57,8 @@ export const expertiseAreas = [
       "Environmental Monitoring",
       "Pollution Control",
       "Environmental Impact Assessment",
+      "Environmental Management System Auditing",
+      "Air Quality & Water Quality Modeling",
     ],
   },
   {
@@ -68,6 +70,7 @@ export const expertiseAreas = [
       "Climate Resilience",
       "ESG",
       "Sustainability Planning",
+      "Training Module Development",
     ],
   },
   {
@@ -80,6 +83,7 @@ export const expertiseAreas = [
       "Carbon Credit Mechanisms",
       "MRV Systems",
       "Climate Finance",
+      "ESG Framework Integration",
     ],
   },
   {
@@ -91,6 +95,7 @@ export const expertiseAreas = [
       "Drought Risk",
       "Disaster Risk Reduction",
       "Multi-Hazard Risk Assessment",
+      "Hydrological Analysis",
     ],
   },
   {
@@ -101,6 +106,7 @@ export const expertiseAreas = [
       "Remote / Spatial Analysis",
       "Thematic Mapping",
       "Environmental Spatial Analysis",
+      "DGPS / RTK Ground Truthing",
     ],
   },
   {
@@ -113,6 +119,7 @@ export const expertiseAreas = [
       "Policy Analysis",
       "Institutional Planning",
       "Monitoring & Evaluation",
+      "Quantitative Analysis — SPSS & Excel",
     ],
   },
 ];
@@ -205,6 +212,38 @@ export const projects = [
       "Provided environmental specialist input supporting infrastructure and livelihood improvement in haor (wetland) regions.",
     category: "Water & Disaster Risk",
   },
+  {
+    title: "Satellite Town Masterplan — Chakpara, Rajshahi",
+    organization: "Sustainable Research & Consultancy Ltd.",
+    role: "Environmental Specialist",
+    description:
+      "Supported feasibility and masterplan preparation with environmental screening, baseline assessment, stakeholder consultation, and safeguard integration.",
+    category: "Development Planning & Advisory",
+  },
+  {
+    title: "Narayanganj Comprehensive Transport Master Plan",
+    organization: "Sustainable Research & Consultancy Ltd.",
+    role: "Environmental Specialist",
+    description:
+      "Contributed to transport demand assessment, mass transit pre-feasibility, multimodal hub planning, and environmental and social impact review.",
+    category: "Development Planning & Advisory",
+  },
+  {
+    title: "Haor Infrastructure and Livelihood Improvement Project (HILIP)",
+    organization: "Government of Bangladesh / Development Partners",
+    role: "Environmental Specialist",
+    description:
+      "Prepared IEE and ESIA inputs, supported GIS-based agricultural mapping, and contributed to training and environmental safeguards for wetland infrastructure.",
+    category: "Water & Disaster Risk",
+  },
+  {
+    title: "N-06 National Highway Improvement — Chapai Nawabganj",
+    organization: "Roads and Highways Department",
+    role: "Environmental Specialist",
+    description:
+      "Supported feasibility, IEE, EIA, spatial database development, land-use mapping, and environmental planning for a national highway corridor.",
+    category: "Environmental Management",
+  },
 ];
 
 export const journey = [
@@ -233,6 +272,12 @@ export const journey = [
   {
     organization: "Resource Control Company Ltd.",
     role: "Environmental Monitoring Expert / Environmental Specialist / Environmental Management Coordinator",
+  },
+  {
+    period: "2015 — Present",
+    organization: "Sustainable Research & Consultancy Ltd.",
+    role: "Environmental Specialist",
+    note: "Feasibility studies, masterplans, EIA / IEE, GIS, and environmental safeguards",
   },
   {
     period: "2013 — 2014",
@@ -269,6 +314,41 @@ export const publications = [
       "Evaluation of drinking water technologies in southwestern coastal area",
     venue: "6th ICWFM",
     year: "2017",
+  },
+  {
+    title: "Water, Sanitation, and Hygiene for Small Shopkeepers: A Perspective from Bangladesh",
+    venue: "JSM Environmental Science & Ecology",
+    year: "2017",
+  },
+  {
+    title: "Chronological History and Destruction Pattern of Tornados in Bangladesh",
+    venue: "American Journal of Environmental Protection",
+    year: "2016",
+  },
+  {
+    title: "WASH Condition of Small Shopkeepers in Dhaka City",
+    venue: "International Conference of Sustainable Development",
+    year: "2015",
+  },
+  {
+    title: "Destruction Pattern of Tornado in Bangladesh",
+    venue: "International Conference on Water and Flood Management",
+    year: "2015",
+  },
+  {
+    title: "Characterization and Management of Solid Waste in Pharmaceutical Companies",
+    venue: "WASTE Safe, KUET",
+    year: "2013",
+  },
+  {
+    title: "Waste Management Procedure in Pharmaceutical Companies in Bangladesh",
+    venue: "ICETCSD, SUST",
+    year: "2012",
+  },
+  {
+    title: "CATA Earth — Catalyzing Transformative Health Education",
+    venue: "European Education and Culture Executive Agency",
+    year: "Ongoing",
   },
 ];
 

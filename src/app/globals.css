@@ -84,3 +84,15 @@ body {
   text-transform: uppercase;
   letter-spacing: -0.025em;
 }
+
+@media (max-width: 767px) {
+  .site-footer > div:first-child { padding: 24px; }
+  .site-footer > div:first-child > div { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+  .site-footer > div:first-child > div > div:first-child { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; }
+  .site-footer h2 { font-size: 12px; }
+  .site-footer .mt-10 { margin-top: 16px; }
+  .site-footer > div:first-child > div > div:first-child .mt-10 { margin-top: 0; }
+  .site-footer ul { font-size: 10px; gap: 8px; }
+  .site-footer li { gap: 8px; overflow-wrap: anywhere; }
+  .site-footer > div:last-child > div { padding: 16px 24px; }
+}
