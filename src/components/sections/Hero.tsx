@@ -9,7 +9,7 @@ export function Hero() {
     <section
       id="home"
       aria-labelledby="hero-title"
-      className="relative isolate flex min-h-svh items-center overflow-hidden bg-[#090b14] text-white"
+      className="relative isolate flex min-h-svh items-start justify-start overflow-hidden bg-[#090b14] pt-32 text-white md:items-center md:justify-center md:pt-0"
     >
       {/* Replace this temporary image with the final landscape portrait. */}
       <Image
@@ -18,7 +18,7 @@ export function Hero() {
         fill
         sizes="100vw"
         preload
-        className="object-cover object-[72%_center]"
+        className="object-cover object-[90%_65%]"
       />
       <div className="absolute inset-0 bg-black/45" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#050716]/30 via-[#050716]/20 to-[#050716]/65" />
@@ -34,8 +34,8 @@ export function Hero() {
           {site.name}
         </h1>
         <p className="mt-3 max-w-4xl text-sm font-semibold uppercase leading-relaxed tracking-[0.01em] sm:text-base lg:text-lg xl:text-xl">
-          {site.title} <span aria-hidden="true">&middot;</span>{" "}
-          {site.subtitle}
+          <span className="block">{site.title}</span>
+          <span className="mt-1 block text-white/80">{site.subtitle}</span>
         </p>
       </div>
     </section>

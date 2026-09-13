@@ -86,7 +86,7 @@ const storyBlocks: StoryBlock[] = [
     id: "education",
     label: "Education & Credentials",
     bg: "bg-cream",
-    image: "/images/story/education.jpg",
+    image: "/images/story/publications.jpg",
     content: <Credentials />,
   },
   {
@@ -94,7 +94,7 @@ const storyBlocks: StoryBlock[] = [
     id: "honors",
     label: "Honors & Awards",
     bg: "bg-cream",
-    image: "/images/story/education.jpg",
+    image: "/images/story/glance.jpg",
     content: <Honors />,
   },
   {
@@ -102,7 +102,7 @@ const storyBlocks: StoryBlock[] = [
     id: "speaking",
     label: "Workshops & Training",
     bg: "bg-cream",
-    image: "/images/story/speaking.jpg",
+    image: "/images/story/projects.jpg",
     content: <Speaking />,
   },
   {
