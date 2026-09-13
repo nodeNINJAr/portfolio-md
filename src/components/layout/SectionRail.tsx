@@ -42,6 +42,7 @@ export function SectionRail() {
       style={{ mixBlendMode: "difference" }}
       className="hidden lg:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col items-end gap-4"
     >
+      
       {items.map((item) => {
         const isActive = active === item.id;
         return (
