@@ -390,4 +390,7 @@ export const aboutMedia: {
   fieldPortrait?: string;
   video?: string;
   videoPoster?: string;
-} = {};
+} = {
+  portrait: "/images/profile/abu-jubayer-impact.jpg",
+  fieldPortrait: "/images/profile/abu-jubayer.jpg",
+};

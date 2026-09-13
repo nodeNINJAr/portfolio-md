@@ -13,19 +13,19 @@ export function Hero() {
     >
       {/* Replace this temporary image with the final landscape portrait. */}
       <Image
-        src="/images/story/about.jpg"
+        src="/images/profile/abu-jubayer-speaking-edited.jpg"
         alt=""
         fill
         sizes="100vw"
         preload
-        className="object-cover object-[35%_center]"
+        className="object-cover object-[72%_center]"
       />
       <div className="absolute inset-0 bg-black/45" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#050716]/30 via-[#050716]/20 to-[#050716]/65" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#050716]/70 via-transparent to-transparent md:hidden" />
 
       <div
-        className="relative z-10 ml-6 mr-6 mt-20 w-full border-l-[4px] border-[#CCED00] py-2 pl-5 text-white sm:ml-10 sm:mr-10 sm:pl-6 md:ml-[40%] md:mr-[4%] md:mt-12 md:w-[56%]"
+        className="relative z-10 ml-6 mr-6 mt-20 w-full border-l-[4px] border-[#CCED00] py-2 pl-5 text-white sm:ml-10 sm:mr-10 sm:pl-6 md:ml-[8%] md:mr-auto md:mt-12 md:w-[58%]"
       >
         <h1
           id="hero-title"

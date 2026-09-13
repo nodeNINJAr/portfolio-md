@@ -38,7 +38,7 @@ const storyBlocks: StoryBlock[] = [
     id: "about",
     label: "About Abu Jubayer",
     bg: "bg-cream",
-    image: "/images/story/about.jpg",
+    image: "/images/profile/abu-jubayer.jpg",
     content: <About />,
   },
   {
