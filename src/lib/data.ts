@@ -392,5 +392,5 @@ export const aboutMedia: {
   videoPoster?: string;
 } = {
   portrait: "/images/profile/abu-jubayer-impact.jpg",
-  fieldPortrait: "/images/profile/abu-jubayer.jpg",
+  fieldPortrait: "/images/profile/abu-jubayer-speaking-close.jpg",
 };
