@@ -8,6 +8,7 @@ const items = [
   { id: "expertise", label: "Expertise" },
   { id: "projects", label: "Projects" },
   { id: "publications", label: "Publications" },
+  { id: "honors", label: "Awards" },
   { id: "speaking", label: "Speaking" },
   { id: "contact", label: "Contact" },
 ];

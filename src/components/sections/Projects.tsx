@@ -19,7 +19,7 @@ export function Projects() {
           ghost="Work"
         />
 
-        <div className="mt-12 border-t border-[var(--color-border)]">
+        <div className="mt-12 space-y-4">
           {projects.map((project, i) => {
             const isOpen = openIndex === i;
             return (
@@ -28,7 +28,7 @@ export function Projects() {
                 delay={Math.min(i, 6) * 0.03}
                 direction={i % 2 === 0 ? "up" : "right"}
               >
-                <div className="group relative border-b border-[var(--color-border)] overflow-hidden">
+                <div className="group relative rounded-2xl border border-dashed border-black/25 px-5 sm:px-7 overflow-hidden transition-colors hover:border-black/50">
                   <span
                     aria-hidden="true"
                     className="pointer-events-none absolute -right-2 top-1/2 -translate-y-1/2 font-display text-[5.5rem] sm:text-[7rem] leading-none text-ink/[0.03] transition-transform duration-500 group-hover:scale-110 group-hover:text-sage-deep/[0.06]"
@@ -37,6 +37,8 @@ export function Projects() {
                   </span>
 
                   <button
+                    aria-expanded={isOpen}
+                    aria-controls={`project-details-${i}`}
                     onClick={() => setOpenIndex(isOpen ? null : i)}
                     className="relative w-full text-left py-8 flex flex-col gap-3"
                   >
@@ -53,7 +55,7 @@ export function Projects() {
                       {project.organization ? ` — ${project.organization}` : ""}
                     </p>
                     <div className="pl-6 flex flex-wrap items-center justify-between gap-3">
-                      <span className="inline-block text-xs tracking-[0.12em] uppercase text-sage-deep/80 border border-sage-deep/20 bg-sage-tint/40 rounded-full px-3 py-1">
+                      <span className="inline-block text-xs tracking-[0.12em] uppercase text-ink/70 border border-black/15 bg-transparent rounded-full px-3 py-1">
                         {project.category}
                       </span>
                       <div className="flex items-center gap-4">
@@ -82,6 +84,7 @@ export function Projects() {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                        id={`project-details-${i}`}
                         className="relative overflow-hidden"
                       >
                         <div className="pb-8 pl-6 max-w-2xl">

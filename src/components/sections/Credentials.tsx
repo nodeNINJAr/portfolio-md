@@ -6,6 +6,7 @@ export function Credentials() {
   return (
     <>
       <SectionHeading
+        ghost="Credentials"
         eyebrow="Credentials"
         title="Professional Credentials"
         description="The academic foundation, technical training, and affiliations underpinning the practice."
@@ -14,12 +15,12 @@ export function Credentials() {
       <div className="mt-12 flex flex-col gap-12">
         <div>
           <Reveal>
-            <h3 className="eyebrow">Education</h3>
+            <h3 className="inline-block border-b-2 border-[#CCED00] pb-2 text-sm font-bold uppercase text-ink">Education</h3>
           </Reveal>
-          <div className="mt-6 flex flex-col gap-7 border-t border-[var(--color-border)] pt-7">
+          <div className="mt-6 grid gap-4">
             {education.map((ed, i) => (
               <Reveal key={ed.degree} delay={0.06 * i}>
-                <div>
+                <div className="relative border-l-4 border-[#CCED00] rounded-r-xl bg-black/[0.025] px-6 py-5">
                   <p className="font-display text-lg sm:text-xl text-ink leading-snug">
                     {ed.degree}
                   </p>
@@ -32,14 +33,14 @@ export function Credentials() {
 
         <div>
           <Reveal>
-            <h3 className="eyebrow">Training &amp; Professional Development</h3>
+            <h3 className="inline-block border-b-2 border-[#CCED00] pb-2 text-sm font-bold uppercase text-ink">Training &amp; Professional Development</h3>
           </Reveal>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 border-t border-[var(--color-border)] pt-7">
+          <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-3">
             {trainings.map((t, i) => (
               <Reveal key={t} delay={0.04 * i}>
-                <div className="flex gap-3">
-                  <span className="text-sage-deep mt-1 shrink-0">—</span>
-                  <p className="text-ink/75 leading-relaxed">{t}</p>
+                <div className="flex h-full gap-3 rounded-xl border border-dashed border-black/20 p-4">
+                  <span className="mt-0.5 text-xs font-bold text-ink/40">{String(i + 1).padStart(2, "0")}</span>
+                  <p className="text-sm text-ink/75 leading-relaxed">{t}</p>
                 </div>
               </Reveal>
             ))}
@@ -48,12 +49,12 @@ export function Credentials() {
 
         <div>
           <Reveal>
-            <h3 className="eyebrow">Professional Affiliations</h3>
+            <h3 className="inline-block border-b-2 border-[#CCED00] pb-2 text-sm font-bold uppercase text-ink">Professional Affiliations</h3>
           </Reveal>
-          <div className="mt-6 flex flex-col gap-4 border-t border-[var(--color-border)] pt-7">
+          <div className="mt-6 flex flex-col gap-4 border-t border-dashed border-black/20 pt-7">
             {affiliations.map((a, i) => (
               <Reveal key={a} delay={0.05 * i}>
-                <p className="text-ink/75 leading-relaxed">{a}</p>
+                <p className="text-sm text-ink/75 leading-relaxed">{a}</p>
               </Reveal>
             ))}
           </div>

@@ -26,13 +26,13 @@
   --color-sage: var(--color-sage);
   --color-sage-deep: var(--color-sage-deep);
   --color-sage-tint: var(--color-sage-tint);
-  --font-serif: var(--font-fraunces);
+  --font-serif: var(--font-inter);
   --font-sans: var(--font-inter);
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 132px;
+  scroll-padding-top: 84px;
 }
 
 @media (min-width: 768px) {
@@ -67,11 +67,20 @@ body {
   }
 
   .font-display {
-    font-family: var(--font-serif), Georgia, serif;
+    font-family: var(--font-sans), Arial, sans-serif;
   }
 }
 
 ::selection {
   background: var(--color-sage);
   color: var(--color-cream);
+}
+
+.image-panel-title {
+  font-family: var(--font-oswald), Impact, sans-serif;
+  font-size: clamp(2rem, 3.7vw, 4.75rem);
+  font-weight: 700;
+  line-height: 1.12;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
 }

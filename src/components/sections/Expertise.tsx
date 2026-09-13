@@ -12,21 +12,21 @@ export function Expertise() {
         ghost="Expertise"
       />
 
-      <div className="mt-12 divide-y divide-[var(--color-border)] border-t border-[var(--color-border)]">
+      <div className="mt-12 grid grid-cols-1 xl:grid-cols-2 gap-5">
         {expertiseAreas.map((area, i) => (
-          <Reveal key={area.number} delay={0.04 * i}>
-            <div className="py-8">
+          <Reveal key={area.number} delay={0.04 * i} className="h-full">
+            <div className="group h-full rounded-2xl border border-dashed border-black/20 p-6 transition-colors hover:border-black/50">
               <div className="flex items-baseline gap-4">
-                <span className="font-display text-sage-deep text-lg">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#CCED00] text-xs font-bold text-black">
                   {area.number}
                 </span>
-                <h3 className="font-display text-xl sm:text-2xl leading-snug text-ink">
+                <h3 className="text-lg font-semibold leading-snug text-ink">
                   {area.title}
                 </h3>
               </div>
-              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 pl-9">
+              <ul className="mt-6 flex flex-wrap gap-2">
                 {area.items.map((item) => (
-                  <li key={item} className="text-ink/70 text-sm sm:text-base">
+                  <li key={item} className="rounded-full border border-black/10 px-3 py-1.5 text-xs leading-relaxed text-ink/70">
                     {item}
                   </li>
                 ))}

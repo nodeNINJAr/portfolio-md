@@ -1,5 +1,5 @@
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { FixedFooterReveal } from "@/components/layout/FixedFooterReveal";
 import { SectionRail } from "@/components/layout/SectionRail";
 import { SectionTabs } from "@/components/layout/SectionTabs";
 import { Hero } from "@/components/sections/Hero";
@@ -9,9 +9,9 @@ import { AtAGlance } from "@/components/sections/AtAGlance";
 import { Expertise } from "@/components/sections/Expertise";
 import { Projects } from "@/components/sections/Projects";
 import { Journey } from "@/components/sections/Journey";
-import { ClimateBand } from "@/components/sections/ClimateBand";
 import { Publications } from "@/components/sections/Publications";
 import { Credentials } from "@/components/sections/Credentials";
+import { Honors } from "@/components/sections/Honors";
 import { Speaking } from "@/components/sections/Speaking";
 import { Philosophy } from "@/components/sections/Philosophy";
 import { Contact } from "@/components/sections/Contact";
@@ -21,16 +21,14 @@ import { StoryScroller, StoryBlock } from "@/components/sections/StoryScroller";
 // through "contact" — it never releases until the whole story ends, only
 // crossfading as each panel's content scrolls into view. Sections that
 // aren't their own nav item (At a Glance, Journey, Credentials, Philosophy)
-// share the same image as the nav item before them. ClimateBand has no
-// image of its own — the pin just keeps showing the previous panel's image
-// while it scrolls by.
+// display their corresponding story images as they scroll into view.
 
 const storyBlocks: StoryBlock[] = [
   {
     kind: "band",
     key: "about-navigation",
     content: (
-      <div id="about-navigation" className="bg-black px-2 py-3">
+      <div id="about-navigation" className="hidden bg-black px-2 py-3 md:block">
         <SectionTabs active="about" />
       </div>
     ),
@@ -38,7 +36,7 @@ const storyBlocks: StoryBlock[] = [
   {
     kind: "panel",
     id: "about",
-    label: "Portrait",
+    label: "About Abu Jubayer",
     bg: "bg-cream",
     image: "/images/story/about.jpg",
     content: <About />,
@@ -46,7 +44,7 @@ const storyBlocks: StoryBlock[] = [
   {
     kind: "panel",
     id: "glance",
-    label: "15+ Years",
+    label: "At a Glance",
     bg: "bg-cream",
     image: "/images/story/glance.jpg",
     content: <AtAGlance />,
@@ -54,7 +52,7 @@ const storyBlocks: StoryBlock[] = [
   {
     kind: "panel",
     id: "expertise",
-    label: "Field Assessment",
+    label: "Expertise",
     bg: "bg-cream",
     image: "/images/story/expertise.jpg",
     content: <Expertise />,
@@ -62,7 +60,7 @@ const storyBlocks: StoryBlock[] = [
   {
     kind: "panel",
     id: "projects",
-    label: "Project Sites",
+    label: "Selected Projects",
     bg: "bg-cream",
     image: "/images/story/projects.jpg",
     content: <Projects />,
@@ -70,12 +68,11 @@ const storyBlocks: StoryBlock[] = [
   {
     kind: "panel",
     id: "journey",
-    label: "Career Milestones",
+    label: "Career Path",
     bg: "bg-cream",
     image: "/images/story/journey.jpg",
     content: <Journey />,
   },
-  { kind: "band", key: "climate", content: <ClimateBand /> },
   {
     kind: "panel",
     id: "publications",
@@ -87,10 +84,18 @@ const storyBlocks: StoryBlock[] = [
   {
     kind: "panel",
     id: "education",
-    label: "Certifications",
+    label: "Education & Credentials",
     bg: "bg-cream",
     image: "/images/story/education.jpg",
     content: <Credentials />,
+  },
+  {
+    kind: "panel",
+    id: "honors",
+    label: "Honors & Awards",
+    bg: "bg-cream",
+    image: "/images/story/education.jpg",
+    content: <Honors />,
   },
   {
     kind: "panel",
@@ -111,7 +116,7 @@ const storyBlocks: StoryBlock[] = [
   {
     kind: "panel",
     id: "contact",
-    label: "Dhaka, Bangladesh",
+    label: "Get in Touch",
     bg: "bg-cream",
     image: "/images/story/contact.jpg",
     content: (
@@ -120,7 +125,7 @@ const storyBlocks: StoryBlock[] = [
       </div>
     ),
   },
-  { kind: "band", key: "footer", content: <Footer /> },
+  { kind: "band", key: "footer", content: <FixedFooterReveal /> },
 ];
 
 export default function Home() {

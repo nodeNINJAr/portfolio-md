@@ -1,32 +1,14 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/lib/data";
 import { Reveal } from "../ui/Reveal";
+import { SectionHeading } from "../ui/SectionHeading";
 import { TextReveal } from "../ui/TextReveal";
 
 export function Contact() {
   return (
     <>
       <div className="relative">
-        <div className="relative inline-block">
-          <span
-            aria-hidden="true"
-            className="pointer-events-none select-none absolute -top-1 left-0 whitespace-nowrap font-display font-semibold uppercase text-ink/[0.07] text-6xl sm:text-7xl md:text-8xl leading-none"
-          >
-            Contact
-          </span>
-          <Reveal>
-            <span className="relative inline-block bg-sage text-cream text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] px-5 py-3 rounded-sm">
-              Get in Touch
-            </span>
-          </Reveal>
-        </div>
-
-        <Reveal delay={0.1}>
-          <h2 className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl font-semibold uppercase tracking-tight text-ink">
-            Contact
-          </h2>
-          <span className="mt-4 block h-[3px] w-20 bg-sage" />
-        </Reveal>
+        <SectionHeading eyebrow="Get in Touch" title="Contact" ghost="Contact" />
 
         <Reveal delay={0.18} scale={0.98}>
           <TextReveal
@@ -34,7 +16,7 @@ export function Contact() {
             text="Let's Work Toward More Sustainable Solutions"
             delay={0.2}
             stagger={0.04}
-            className="font-display mt-10 block text-2xl sm:text-3xl md:text-[2.25rem] leading-[1.2] font-light text-ink max-w-xl"
+            className="font-display mt-10 block text-2xl sm:text-3xl md:text-[2.25rem] leading-[1.2] font-normal uppercase text-ink max-w-xl"
           />
         </Reveal>
         <Reveal delay={0.24}>
@@ -45,16 +27,16 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.3}>
-          <div className="mt-9 flex flex-wrap gap-4">
+          <div className="mt-9 flex flex-wrap gap-3">
             <a
               href={`mailto:${site.email}`}
-              className="px-7 py-3.5 bg-navy text-cream text-sm font-medium uppercase tracking-[0.1em] rounded-sm hover:bg-sage-deep transition-colors"
+              className="px-7 py-4 bg-[#CCED00] text-black text-sm font-semibold rounded-full hover:bg-black hover:text-[#CCED00] transition-colors"
             >
               Get in Touch
             </a>
             <a
               href={site.cvHref}
-              className="px-7 py-3.5 border border-navy/25 text-navy text-sm font-medium uppercase tracking-[0.1em] rounded-sm hover:bg-navy hover:text-cream transition-colors"
+              className="px-7 py-4 border border-dashed border-black/30 text-ink text-sm font-semibold rounded-full hover:bg-black hover:text-white transition-colors"
             >
               Download CV
             </a>
@@ -62,18 +44,18 @@ export function Contact() {
         </Reveal>
       </div>
 
-      <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-5 border-t border-[var(--color-border)] pt-8">
+      <div className="mt-12 grid grid-cols-1 xl:grid-cols-2 gap-5 border-t border-dashed border-black/25 pt-8">
         <Reveal delay={0.1} direction="left">
           <a
             href={`tel:${site.phone.replace(/\s+/g, "")}`}
-            className="flex items-center gap-2.5 text-ink hover:text-sage-deep transition-colors"
+            className="flex min-h-16 items-center gap-3 rounded-xl border border-dashed border-black/20 px-4 py-3 text-sm break-all text-ink hover:text-sage-deep transition-colors"
           >
             <Phone size={17} className="text-sage-deep shrink-0" />
             {site.phone}
           </a>
         </Reveal>
         <Reveal delay={0.16} direction="left">
-          <span className="flex items-center gap-2.5 text-ink">
+          <span className="flex min-h-16 items-center gap-3 rounded-xl border border-dashed border-black/20 px-4 py-3 text-sm break-all text-ink">
             <MapPin size={17} className="text-sage-deep shrink-0" />
             {site.location}
           </span>
@@ -81,7 +63,7 @@ export function Contact() {
         <Reveal delay={0.22} direction="left">
           <a
             href={`mailto:${site.email}`}
-            className="flex items-center gap-2.5 text-ink hover:text-sage-deep transition-colors"
+            className="flex min-h-16 items-center gap-3 rounded-xl border border-dashed border-black/20 px-4 py-3 text-sm break-all text-ink hover:text-sage-deep transition-colors"
           >
             <Mail size={17} className="text-sage-deep shrink-0" />
             {site.email}
@@ -92,7 +74,7 @@ export function Contact() {
             href={site.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2.5 text-ink hover:text-sage-deep transition-colors"
+            className="flex min-h-16 items-center gap-3 rounded-xl border border-dashed border-black/20 px-4 py-3 text-sm break-all text-ink hover:text-sage-deep transition-colors"
           >
             <svg
               width="17"

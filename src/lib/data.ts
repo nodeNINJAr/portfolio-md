@@ -16,6 +16,7 @@ export const navLinks = [
   { label: "Expertise", href: "#expertise" },
   { label: "Projects", href: "#projects" },
   { label: "Publications", href: "#publications" },
+  { label: "Awards", href: "#honors" },
   { label: "Speaking", href: "#speaking" },
   { label: "Contact", href: "#contact" },
 ];
@@ -302,3 +303,11 @@ export const affiliations = [
   "Bangladesh Paribeshbid Society",
   "Curriculum Development Committee — Department of Geo-Information Science and Earth Observation, Patuakhali Science and Technology University",
 ];
+
+// Add local public-file paths when the profile photos and video are ready.
+export const aboutMedia: {
+  portrait?: string;
+  fieldPortrait?: string;
+  video?: string;
+  videoPoster?: string;
+} = {};

@@ -72,10 +72,16 @@ export function StoryScroller({ blocks }: { blocks: StoryBlock[] }) {
                     className="object-cover"
                   />
                 )}
-                <div className="absolute inset-0 bg-navy/35" />
-                <span className="absolute bottom-8 left-8 right-8 font-display text-cream text-sm uppercase tracking-[0.1em]">
-                  {activePanel?.label}
-                </span>
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                <div className="absolute top-[18%] bottom-12 left-[7%] right-[12%] flex items-end border-l-[8px] border-b-[8px] border-white/40 p-5 lg:p-8">
+                  <div className="max-w-full">
+                    <p className="image-panel-title break-words text-white">
+                      {activePanel?.label}
+                    </p>
+                    <span className="mt-4 block h-1 w-3/4 max-w-60 bg-[#CCED00]" />
+                  </div>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>

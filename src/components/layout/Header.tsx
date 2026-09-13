@@ -83,7 +83,7 @@ export function Header() {
           </div>
         </div>
         {stickyNav && (
-          <div className="w-full min-w-0 px-2 pb-2 md:w-[60%] md:py-3 md:pr-6">
+          <div className="hidden min-w-0 px-2 md:block md:w-[60%] md:py-3 md:pr-6">
             <SectionTabs active={active} />
           </div>
         )}

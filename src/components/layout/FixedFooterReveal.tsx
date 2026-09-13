@@ -24,7 +24,7 @@ export function FixedFooterReveal() {
   return (
     <>
       <div style={{ height }} aria-hidden="true" />
-      <div ref={ref} className="fixed bottom-0 inset-x-0 z-0">
+      <div ref={ref} className="fixed bottom-0 right-0 left-0 md:left-[40%] -z-10">
         <Footer />
       </div>
     </>
