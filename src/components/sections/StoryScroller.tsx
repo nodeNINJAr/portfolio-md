@@ -10,6 +10,8 @@ export type StoryPanel = {
   label: string;
   bg: string;
   image: string;
+  imagePosition?: string;
+  overlay?: string;
   content: ReactNode;
 };
 
@@ -78,11 +80,16 @@ export function StoryScroller({ blocks }: { blocks: StoryBlock[] }) {
                       fill
                       sizes="40vw"
                       className="object-cover"
+                      style={{ objectPosition: activePanel.imagePosition ?? "center" }}
                     />
                   </motion.div>
                 )}
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-black/15" />
+                {activePanel?.overlay !== "none" && (
+                  <>
+                    <div className={`absolute inset-0 ${activePanel?.overlay ?? "bg-black/20"}`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-black/15" />
+                  </>
+                )}
                 <div className="absolute right-7 top-8 text-right sm:right-10 sm:top-10">
                   <p className="text-[clamp(4rem,8vw,8rem)] font-black leading-[0.8] tracking-[-0.12em] text-transparent [text-stroke:1px_rgba(255,255,255,0.65)] [-webkit-text-stroke:1px_rgba(255,255,255,0.65)]">
                     {String(activeIndex + 1).padStart(2, "0")}

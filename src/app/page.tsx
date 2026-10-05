@@ -48,7 +48,7 @@ const storyBlocks: StoryBlock[] = [
     id: "organisations",
     label: "Organisations & Institutions",
     bg: "bg-[#141414]",
-    image: "/images/story/expertise.jpg",
+    image: "/images/story/organisations.jpg",
     content: <OrganizationsBand />,
   },
   {
@@ -56,7 +56,8 @@ const storyBlocks: StoryBlock[] = [
     id: "services",
     label: "What I Can Do",
     bg: "bg-cream",
-    image: "/images/story/projects.jpg",
+    image: "/images/story/services-advisory.jpg",
+    overlay: "bg-black/40",
     content: <Services />,
   },
   {
@@ -64,7 +65,9 @@ const storyBlocks: StoryBlock[] = [
     id: "glance",
     label: "At a Glance",
     bg: "bg-cream",
-    image: "/images/story/glance.jpg",
+    image: "/images/story/at-a-glance-portrait.jpg",
+    imagePosition: "center",
+    overlay: "bg-black/20",
     content: <AtAGlance />,
   },
   {
@@ -72,7 +75,7 @@ const storyBlocks: StoryBlock[] = [
     id: "expertise",
     label: "Expertise",
     bg: "bg-cream",
-    image: "/images/story/expertise.jpg",
+    image: "/images/story/expertise-notes.jpg",
     content: <Expertise />,
   },
   {
@@ -80,7 +83,7 @@ const storyBlocks: StoryBlock[] = [
     id: "projects",
     label: "Selected Projects",
     bg: "bg-cream",
-    image: "/images/story/projects.jpg",
+    image: "/images/story/selected-projects.jpg",
     content: <Projects />,
   },
   {
@@ -88,7 +91,7 @@ const storyBlocks: StoryBlock[] = [
     id: "journey",
     label: "Career Path",
     bg: "bg-cream",
-    image: "/images/story/journey.jpg",
+    image: "/images/story/career-path.jpg",
     content: <Journey />,
   },
   {
@@ -96,7 +99,7 @@ const storyBlocks: StoryBlock[] = [
     id: "publications",
     label: "Research & Field Notes",
     bg: "bg-cream",
-    image: "/images/story/publications.jpg",
+    image: "/images/story/research-analysis.jpg",
     content: <Publications />,
   },
   {
@@ -104,7 +107,8 @@ const storyBlocks: StoryBlock[] = [
     id: "education",
     label: "Education & Credentials",
     bg: "bg-cream",
-    image: "/images/story/publications.jpg",
+    image: "/images/story/education-bookshelf.jpg",
+    overlay: "none",
     content: <Credentials />,
   },
   {
@@ -112,7 +116,7 @@ const storyBlocks: StoryBlock[] = [
     id: "honors",
     label: "Honors & Awards",
     bg: "bg-cream",
-    image: "/images/story/glance.jpg",
+    image: "/images/story/awards.avif",
     content: <Honors />,
   },
   {
@@ -120,7 +124,8 @@ const storyBlocks: StoryBlock[] = [
     id: "speaking",
     label: "Workshops & Training",
     bg: "bg-cream",
-    image: "/images/story/projects.jpg",
+    image: "/images/story/kuaa-skill-session.png",
+    overlay: "bg-black/40",
     content: <Speaking />,
   },
   {

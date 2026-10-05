@@ -1,6 +1,7 @@
 import { ArrowDown, Building2 } from "lucide-react";
 import { journey } from "@/lib/data";
 import { SectionHeading } from "../ui/SectionHeading";
+import { Reveal } from "../ui/Reveal";
 
 export function Journey() {
   return (
@@ -40,6 +41,7 @@ export function Journey() {
                 <span className={`h-1 w-1 rounded-full ${isCurrent ? "bg-black" : "bg-white"}`} />
               </span>
 
+              <Reveal className="min-w-0" delay={Math.min(i, 3) * 0.05}>
               <article className={`min-w-0 rounded-2xl border border-dashed bg-transparent p-5 transition-colors duration-200 sm:p-7 ${isCurrent ? "border-black/60 text-ink" : "border-black/25 text-ink hover:border-black/50"}`}>
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   {role.period && (
@@ -67,6 +69,7 @@ export function Journey() {
                   </p>
                 )}
               </article>
+              </Reveal>
             </li>
           );
         })}

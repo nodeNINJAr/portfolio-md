@@ -1,7 +1,7 @@
 import { aboutMedia } from "@/lib/data";
 import Image from "next/image";
 import { ProfilePortrait } from "../ui/ProfilePortrait";
-import { ArrowUpRight, MapPin, Film } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 import { SectionHeading } from "../ui/SectionHeading";
 
@@ -48,6 +48,7 @@ export function About() {
         </p>
       </Reveal>
       <div className="mt-12 grid items-start gap-8 xl:grid-cols-[0.85fr_1.15fr]">
+        <Reveal>
         <figure className="relative pb-7 pr-5">
           <ProfilePortrait src={aboutMedia.portrait} label="Abu Jubayer — profile portrait" />
           <div className="absolute bottom-0 right-0 rounded-xl bg-[#CCED00] px-6 py-4 text-black">
@@ -55,7 +56,9 @@ export function About() {
             <span className="text-[10px] font-bold uppercase tracking-wider">Years of experience</span>
           </div>
         </figure>
+        </Reveal>
 
+        <Reveal delay={0.1}>
         <div className="pt-2">
           <p className="flex items-center gap-2 text-xs font-medium text-stone">
             <MapPin size={14} aria-hidden="true" /> Dhaka, Bangladesh
@@ -80,10 +83,12 @@ export function About() {
             Explore the career path <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         </div>
+        </Reveal>
       </div>
 
       <div className="mt-14 grid items-center gap-8 border-t border-dashed border-black/20 pt-12 xl:grid-cols-[1.15fr_0.85fr]">
-        <figure className="xl:order-2">
+        <Reveal className="xl:order-2">
+        <figure>
           {aboutMedia.fieldPortrait && (
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-dashed border-black/20">
               <Image src={aboutMedia.fieldPortrait} alt="Field team on a boat during a haor site visit" fill sizes="(min-width: 1280px) 22vw, (min-width: 768px) 50vw, 90vw" className="object-cover" />
@@ -93,7 +98,9 @@ export function About() {
             <span className="h-px w-8 bg-[#CCED00]" /> Practice, people &amp; perspective
           </figcaption>
         </figure>
-        <div className="xl:order-1">
+        </Reveal>
+        <Reveal className="xl:order-1" delay={0.1}>
+        <div>
           <p className="text-xs font-bold uppercase tracking-[0.15em] text-stone">Beyond the desk</p>
           <h3 className="mt-4 text-2xl font-semibold leading-tight tracking-tight">Bringing knowledge closer to the people who use it.</h3>
           <p className="mt-5 text-sm leading-7 text-ink/70">
@@ -111,11 +118,13 @@ export function About() {
             Knowledge sharing <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         </div>
+        </Reveal>
       </div>
 
+      <Reveal>
       <section aria-labelledby="about-video-title" className="mt-12 overflow-hidden rounded-2xl border border-dashed border-black/25">
         <div className="flex flex-wrap items-center justify-between gap-3 px-6 py-5">
-          <h3 id="about-video-title" className="text-sm font-semibold">A closer look at the practice</h3>
+          <h3 id="about-video-title" className="text-sm font-semibold">Meet Abu Jubayer</h3>
           <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-stone">In conversation</span>
         </div>
         {aboutMedia.video ? (
@@ -124,16 +133,22 @@ export function About() {
             Your browser does not support video playback. <a href={aboutMedia.video}>Download the video</a>.
           </video>
         ) : (
-          <div className="flex aspect-video flex-col items-center justify-center gap-4 bg-[#191919] p-6 text-center text-white">
-            <span className="flex h-16 w-16 items-center justify-center rounded-full border border-[#CCED00]/50 text-[#CCED00]">
-              <Film size={26} strokeWidth={1.5} aria-hidden="true" />
-            </span>
-            <p className="text-lg font-medium">Meet Abu Jubayer</p>
-            <p className="text-xs text-white/55">Introduction video coming soon</p>
-          </div>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/tu2uyGDKbfw?si=OY-7YCqR3c7RpPOE"
+            title="Meet Abu Jubayer — YouTube video"
+            className="aspect-video h-auto w-full border-0 bg-black"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
         )}
       </section>
+      </Reveal>
 
+      <Reveal>
       <aside className="relative mt-10 rounded-2xl border border-dashed border-black/25 px-6 py-8 sm:px-8">
         <span aria-hidden="true" className="absolute -top-5 left-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#CCED00] pt-3 text-4xl font-bold text-black">“</span>
         <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-stone">The guiding principle</p>
@@ -144,6 +159,7 @@ export function About() {
           Read the professional philosophy <ArrowUpRight size={14} aria-hidden="true" />
         </a>
       </aside>
+      </Reveal>
 
       <div className="flex flex-wrap gap-3 border-t border-dashed border-black/20 mt-12 pt-8">
         {domains.map((domain, i) => (

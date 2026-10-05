@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
+import { Reveal } from "../ui/Reveal";
 
 const services = [
   ["Environmental assessments", "EIA / IEE, safeguards, compliance, and practical mitigation plans.", "An assessment report with identified risks, mitigation measures, and an environmental management plan."],
@@ -20,7 +21,8 @@ export function Services() {
       />
       <div className="mt-10 divide-y divide-dashed divide-black/20 border-y border-dashed border-black/20">
         {services.map(([title, description, deliverable], index) => (
-          <article key={title} className="group grid gap-4 py-6 sm:grid-cols-[3rem_1fr_auto] sm:items-center sm:gap-6">
+          <Reveal key={title} delay={Math.min(index, 3) * 0.05}>
+          <article className="group grid gap-4 py-6 sm:grid-cols-[3rem_1fr_auto] sm:items-center sm:gap-6">
             <span className="text-xs font-bold text-ink/40">{String(index + 1).padStart(2, "0")}</span>
             <div>
               <h3 className="text-lg font-semibold">{title}</h3>
@@ -29,11 +31,14 @@ export function Services() {
             </div>
             <a href="#contact" className="inline-flex w-fit items-center gap-2 rounded-full border border-black/20 px-4 py-2 text-xs font-semibold transition-colors hover:bg-[#CCED00] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black">Work with me <ArrowUpRight size={14} aria-hidden="true" /></a>
           </article>
+          </Reveal>
         ))}
       </div>
+      <Reveal>
       <a href="#contact" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#CCED00] px-6 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors hover:bg-black hover:text-[#CCED00]">
         Work with me <ArrowUpRight size={16} aria-hidden="true" />
       </a>
+      </Reveal>
     </>
   );
 }

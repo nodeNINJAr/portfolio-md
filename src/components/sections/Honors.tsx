@@ -1,5 +1,6 @@
 import { Award, Medal, Trophy } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
+import { Reveal } from "../ui/Reveal";
 
 // Fictional entries for layout preview. Replace with verified honors before launch.
 const honors = [
@@ -41,6 +42,7 @@ export function Honors() {
       <ol className="mt-10 space-y-5">
         {honors.map(({ year, title, organization, description, icon: Icon }, i) => (
           <li key={title} className="relative overflow-hidden rounded-2xl border border-dashed border-black/25 p-6 sm:p-8">
+            <Reveal delay={i * 0.05}>
             <span aria-hidden="true" className="pointer-events-none absolute -right-1 -bottom-4 text-8xl font-bold leading-none text-black/[0.035]">
               {String(i + 1).padStart(2, "0")}
             </span>
@@ -55,6 +57,7 @@ export function Honors() {
                 <p className="mt-4 text-sm leading-relaxed text-ink/70">{description}</p>
               </div>
             </div>
+            </Reveal>
           </li>
         ))}
       </ol>

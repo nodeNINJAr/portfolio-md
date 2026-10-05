@@ -1,4 +1,5 @@
 import { SectionBackdrop } from "./SectionBackdrop";
+import { Reveal } from "./Reveal";
 
 export function SectionHeading({
   eyebrow,
@@ -16,7 +17,7 @@ export function SectionHeading({
   ghost?: string;
 }) {
   return (
-    <div className={`relative isolate max-w-2xl ${align === "center" ? "mx-auto text-center" : "text-left"}`}>
+    <Reveal className={`relative isolate max-w-2xl ${align === "center" ? "mx-auto text-center" : "text-left"}`}>
       {ghost && <SectionBackdrop text={ghost} dark={dark} />}
       <span className="relative inline-block bg-[#CCED00] px-7 py-3.5 text-sm font-bold uppercase text-black after:absolute after:top-full after:right-0 after:border-t-[10px] after:border-l-[10px] after:border-t-[#CCED00] after:border-l-transparent">
         {eyebrow}
@@ -32,6 +33,6 @@ export function SectionHeading({
           {description}
         </p>
       )}
-    </div>
+    </Reveal>
   );
 }

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Reveal } from "../ui/Reveal";
 
 const organizations = [
   { name: "Asian Development Bank", mark: "ADB", logo: "/images/organizations/adb-blue-block-removebg-preview.png" },
@@ -25,8 +26,8 @@ export function OrganizationsBand() {
 
   return (
     <section ref={sectionRef} aria-labelledby="organisations-title" className="relative w-full overflow-hidden bg-[#141414] text-white">
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-40 h-96 w-96 rounded-full bg-[#CCED00]/[0.06] blur-3xl" />
-      <div className="relative flex flex-col gap-6 border-b border-white/10 pb-8">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-40 h-96 w-96 rounded-full bg-[#CCED00]/6 blur-3xl" />
+      <Reveal className="relative flex flex-col gap-6 border-b border-white/10 pb-8">
         <div>
           <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.22em] text-[#CCED00]">
             <span className="h-px w-8 bg-[#CCED00]" /> Professional context
@@ -36,13 +37,14 @@ export function OrganizationsBand() {
           </h2>
         </div>
         <span className="shrink-0 text-xs tracking-wide text-white/50">Development · Infrastructure · Academia</span>
-      </div>
+      </Reveal>
       <motion.div
         style={reduceMotion ? undefined : { y }}
         className="relative mt-12 grid grid-cols-1 gap-4 pb-5 sm:grid-cols-2"
       >
-        {organizations.map((organization) => (
-          <div key={organization.name} className="group flex min-h-36 w-full items-center gap-4 rounded-xl border border-dashed border-white/20 bg-white/[0.025] p-4 transition-colors duration-300 hover:border-[#CCED00]/60 hover:bg-white/[0.06] sm:last:col-span-2 xl:p-6">
+        {organizations.map((organization, index) => (
+          <Reveal key={organization.name} delay={Math.min(index, 3) * 0.05} className="h-full sm:last:col-span-2">
+          <div className="group flex h-full min-h-36 w-full items-center gap-4 rounded-xl border border-dashed border-white/20 bg-white/[0.025] p-4 transition-colors duration-300 hover:border-[#CCED00]/60 hover:bg-white/[0.06] xl:p-6">
             <span className="flex h-16 w-16 shrink-0 items-center justify-center p-3 xl:h-20 xl:w-20">
             {organization.logo ? (
               <Image src={organization.logo} alt="" aria-hidden="true" width={160} height={72} className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105" />
@@ -51,10 +53,11 @@ export function OrganizationsBand() {
             )}
             </span>
             <span className="min-w-0">
-              <span className="block break-words text-lg font-bold tracking-[0.04em] text-[#CCED00]">{organization.mark}</span>
+              <span className="block wrap-break-words text-lg font-bold tracking-[0.04em] text-[#CCED00]">{organization.mark}</span>
               <span className="mt-2 block text-xs leading-relaxed text-white/65">{organization.name}</span>
             </span>
           </div>
+          </Reveal>
         ))}
       </motion.div>
     </section>
