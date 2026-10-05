@@ -6,12 +6,13 @@ export const site = {
   email: "Jubayer.buet.bd@gmail.com",
   phone: "+880 1711 459 532",
   linkedin: "https://linkedin.com/in/abujubayer",
-  cvHref: "/Abu-Jubayer-CV.pdf",
+  cvHref: "/cv/CV_Abu%20Jubayer_Details.docx",
 };
 
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
   { label: "Expertise", href: "#expertise" },
   { label: "Projects", href: "#projects" },
   { label: "Publications", href: "#publications" },
@@ -124,12 +125,24 @@ export const expertiseAreas = [
   },
 ];
 
-export const projects = [
+export type Project = {
+  title: string;
+  organization?: string;
+  role: string;
+  period?: string;
+  location?: string;
+  description: string;
+  contributions?: string[];
+  category: string;
+};
+
+export const projects: Project[] = [
   {
     title: "Carbon Credit Mechanism Development in Bangladesh",
     organization: "Palli Karma-Sahayak Foundation (PKSF)",
     role: "Technical Member",
     period: "March 2025 – Present",
+    location: "Bangladesh · National framework",
     description:
       "Supporting the development of a national carbon credit framework for Bangladesh, including registry design and sectoral emission reduction planning.",
     contributions: [
@@ -148,72 +161,81 @@ export const projects = [
     title:
       "Establishment of 1,000-bed Bangladesh–China Friendship General Hospital",
     role: "Development & Appraisal Expert",
+    location: "Northern region, Bangladesh",
     description:
-      "Provided development and appraisal expertise supporting the planning and project appraisal process for a major public healthcare infrastructure initiative.",
+      "Led preparation and finalization of the DPP, defined objectives, scope and costs, and conducted technical, financial, economic and environmental feasibility assessments. Prepared procurement plans, implementation schedules and monitoring frameworks to support appraisal of the proposed hospital.",
     category: "Development Planning & Advisory",
   },
   {
     title: "Bangladesh Fisheries Survey Project",
     role: "DPP Expert",
+    location: "Bangladesh · National survey",
     description:
-      "Contributed development project proposal (DPP) expertise to a national fisheries survey initiative.",
+      "Prepared and finalized the DPP, including survey scope, methodology, cost estimates, procurement and monitoring plans. Coordinated with the Department of Fisheries and stakeholders to support appraisal and approval processes.",
     category: "Development Planning & Advisory",
   },
   {
     title:
       "Establishment of 250-bed General Hospital at Karnaphuli Upazila, Chattogram",
     role: "DPP Expert",
+    location: "Karnaphuli Upazila, Chattogram, Bangladesh",
     description:
-      "Provided DPP expertise for the planning of a regional public healthcare facility.",
+      "Prepared and finalized the hospital DPP with scope, cost estimates, implementation schedule, procurement plan and monitoring framework. Coordinated with ministries, local authorities and technical stakeholders to support appraisal.",
     category: "Development Planning & Advisory",
   },
   {
     title: "Calf Health Care and Management Project",
     organization: "Sustainable Research & Consultancy Ltd.",
     role: "Senior Environmental Expert",
+    period: "January – June 2025",
+    location: "Bangladesh",
     description:
-      "Led environmental expert input for a livestock health and management initiative.",
+      "Reviewed livestock and environmental policies, collected baseline data, and assessed waste, water-use, contamination and emissions risks. Recommended mitigation measures, integrated safeguards into project design, and presented assessment findings to stakeholders.",
     category: "Environmental Management",
   },
   {
     title: "Control of Reproductive Diseases in Crossbred Cattle Project",
+    organization: "Sustainable Research & Consultancy Ltd.",
     role: "Senior Environmental Expert",
+    period: "February – July 2025",
+    location: "Bangladesh",
     description:
-      "Provided senior environmental expertise supporting a livestock disease control project.",
+      "Screened disease-control operations, analysed environmental and socio-economic baseline data, and assessed waste, chemical-use and water-contamination risks. Consulted farmers and veterinary experts and prepared mitigation and safeguard recommendations for project design.",
     category: "Environmental Management",
   },
   {
     title: "Climate Change Policy & Capacity Building",
+    organization: "Sustainable Research & Consultancy Ltd.",
     role: "National Policy Expert",
+    period: "January – March 2025",
+    location: "Bangladesh",
     description:
-      "Contributed policy expertise to a national climate change capacity-building initiative.",
+      "Supported training-module preparation for the CBOP & SIA project. Reviewed policy gaps, consulted institutions, developed policy frameworks and implementation roadmaps, and prepared briefs and training inputs for evidence-based climate planning.",
     category: "Climate & Sustainability",
   },
   {
     title: "UGIIP-III",
     organization: "SMEC-AQUA-RCC JV / LGED / ADB",
     role: "Environmental Specialist",
+    period: "April 2016 – March 2017",
+    location: "Municipalities across Bangladesh",
     description:
-      "Provided environmental specialist input to the Urban Governance and Infrastructure Improvement Project (Phase III).",
+      "Updated drainage masterplans for 16 municipalities and prepared solid-waste management masterplans for 30 municipalities. Conducted WASH demand analysis, gathered environmental baseline data, and supported the Department of Environment clearance process.",
     category: "Environmental Management",
   },
   {
     title: "ESPA Research Project",
     organization: "IWFM, BUET + University of Southampton",
     role: "Researcher",
+    period: "January 2013 – December 2014",
+    location: "Bangladesh",
     description:
-      "Contributed as a researcher to a collaborative research initiative between IWFM, BUET and the University of Southampton.",
-    category: "Water & Disaster Risk",
-  },
-  {
-    title: "Haor Infrastructure and Livelihood Improvement Project",
-    role: "Environmental Specialist",
-    description:
-      "Provided environmental specialist input supporting infrastructure and livelihood improvement in haor (wetland) regions.",
+      "Conducted groundwater and ecosystem-services assessments, environmental modelling and field visits. Produced GIS maps and statistical analyses using SPSS and Excel, and supported drinking-water technology selection and long-term environmental planning.",
     category: "Water & Disaster Risk",
   },
   {
     title: "Satellite Town Masterplan — Chakpara, Rajshahi",
+    location: "Chakpara, Rajshahi City, Bangladesh",
     organization: "Sustainable Research & Consultancy Ltd.",
     role: "Environmental Specialist",
     description:
@@ -222,6 +244,7 @@ export const projects = [
   },
   {
     title: "Narayanganj Comprehensive Transport Master Plan",
+    location: "Narayanganj City Corporation, Bangladesh",
     organization: "Sustainable Research & Consultancy Ltd.",
     role: "Environmental Specialist",
     description:
@@ -230,6 +253,7 @@ export const projects = [
   },
   {
     title: "Haor Infrastructure and Livelihood Improvement Project (HILIP)",
+    location: "Haor region, Bangladesh",
     organization: "Government of Bangladesh / Development Partners",
     role: "Environmental Specialist",
     description:
@@ -238,6 +262,7 @@ export const projects = [
   },
   {
     title: "N-06 National Highway Improvement — Chapai Nawabganj",
+    location: "N-06 corridor, Chapai Nawabganj, Bangladesh",
     organization: "Roads and Highways Department",
     role: "Environmental Specialist",
     description:
@@ -246,52 +271,79 @@ export const projects = [
   },
 ];
 
+export const caseStudies = [
+  {
+    title: "Municipal drainage & solid-waste planning",
+    project: "UGIIP-III",
+    organization: "SMEC-AQUA-RCC JV · LGED / ADB",
+    location: "Bangladesh",
+    period: "April 2016 – March 2017",
+    problem: "Municipal infrastructure planning needed environmental baseline evidence, WASH demand analysis, and coordinated drainage and waste-management inputs.",
+    approach: "As Environmental Specialist, Abu Jubayer gathered baseline data, analysed WASH demand, updated drainage plans, prepared solid-waste plans, and supported environmental clearance processes.",
+    output: "Drainage masterplan updates for 16 municipalities and solid-waste management masterplans for 30 municipalities, alongside environmental baseline and clearance inputs.",
+  },
+  {
+    title: "Environmental evidence for water-resource decisions",
+    project: "Ecosystem Services for Poverty Alleviation (ESPA)",
+    organization: "IWFM, BUET · University of Southampton",
+    location: "Bangladesh",
+    period: "January 2013 – December 2014",
+    problem: "Water-resource and development planning required a clearer understanding of groundwater, ecosystem services, and suitable drinking-water technologies.",
+    approach: "As Researcher, Abu Jubayer conducted environmental modelling, groundwater assessments and field visits, prepared GIS maps, and analysed data using SPSS and Excel.",
+    output: "Spatial maps, statistical assessments, and drinking-water technology selection inputs supporting the research team's long-term environmental planning work.",
+  },
+  {
+    title: "Technical foundations for a carbon-credit mechanism",
+    project: "Carbon Credit Mechanism Development in Bangladesh",
+    organization: "Palli Karma-Sahayak Foundation (PKSF)",
+    location: "Bangladesh · National framework",
+    period: "March 2025 – Present",
+    problem: "A national carbon-credit mechanism requires credible accounting, registry arrangements, sectoral methodologies, and alignment with climate policy.",
+    approach: "As Technical Member, Abu Jubayer contributes framework, MRV and registry inputs, reviews carbon-accounting documentation, and supports sectoral assessment, consultation and capacity development.",
+    output: "Ongoing technical inputs to the framework, registry mechanisms and carbon-project methodologies, with documentation review and stakeholder consultation support.",
+  },
+];
+
 export const journey = [
   {
-    period: "2025 — Present",
+    period: "March 2025 — Present",
     organization: "Palli Karma-Sahayak Foundation (PKSF)",
     role: "Technical Member",
     note: "Carbon Credit Mechanism Development in Bangladesh",
   },
   {
-    period: "2025",
+    period: "January 2015 — Present",
     organization: "Sustainable Research & Consultancy Ltd.",
-    role: "Senior Environmental Expert",
+    role: "Environmental Specialist / Senior Environmental Expert / National Policy Expert",
+    note: "Environmental consultancy from 2015 onward, including satellite-town and transport masterplans, land acquisition feasibility, HILIP safeguards, highway assessments, and GIS. This continuing role covers 2017–2025. Additional 2025 assignments: climate-policy training modules (January–March), calf health feasibility (January–June), and cattle disease-control feasibility (February–July).",
   },
   {
-    period: "2025",
-    organization: "Sustainable Research & Consultancy Ltd.",
-    role: "National Policy Expert",
-    note: "Climate Change Policy & Capacity Building",
-  },
-  {
-    period: "2016 — 2017",
+    period: "April 2016 — March 2017",
     organization: "SMEC-AQUA-RCC JV",
     role: "Environmental Specialist",
+    note: "UGIIP-III, LGED / ADB: drainage masterplans for 16 municipalities, solid-waste masterplans for 30 municipalities, WASH demand analysis, baseline surveys, and environmental clearance support.",
   },
   {
+    period: "November 2011 — June 2017 · Multiple assignments",
     organization: "Resource Control Company Ltd.",
-    role: "Environmental Monitoring Expert / Environmental Specialist / Environmental Management Coordinator",
+    role: "Environmental Monitoring Expert / Environmental Specialist / Environmental Coordinator",
+    note: "Separate assignments: environmental monitoring and survey quality assurance (April 2016–June 2017); IEE and EMP inputs for five LGED / BWDB subprojects under JICA (June 2015–January 2016); housing EIA coordination (January 2012–April 2013, intermittent); and livelihood-project monitoring in the Chittagong Hill Tracts (November 2011–June 2012, intermittent).",
   },
   {
-    period: "2015 — Present",
-    organization: "Sustainable Research & Consultancy Ltd.",
-    role: "Environmental Specialist",
-    note: "Feasibility studies, masterplans, EIA / IEE, GIS, and environmental safeguards",
-  },
-  {
-    period: "2013 — 2014",
+    period: "January 2013 — December 2014",
     organization: "IWFM, BUET + University of Southampton",
     role: "Researcher",
+    note: "ESPA research: groundwater assessment, environmental modelling, ecosystem services analysis, GIS maps, drinking-water technology selection, and SPSS / Excel analysis.",
   },
   {
-    period: "2011 — 2012",
+    period: "March 2011 — December 2012 · Intermittent",
     organization: "JICA Bangladesh",
     role: "Field Officer",
+    note: "Japan–NUGELP WASH project: field and industry visits with the international team and technical environmental support.",
   },
 ];
 
-export const publications = [
+export const publications: { title: string; venue: string; year: string; href?: string }[] = [
   {
     title:
       "A Study into Causes and Consequences of Waterlogging Problem in Southwestern Bangladesh",
@@ -302,6 +354,7 @@ export const publications = [
     title: "Impact of Cyclone Amphan on WASH facilities of coastal Bangladesh",
     venue: "Journal of Water, Sanitation and Hygiene for Development",
     year: "2021",
+    href: "https://doi.org/10.2166/washdev.2021.170",
   },
   {
     title:
@@ -319,11 +372,13 @@ export const publications = [
     title: "Water, Sanitation, and Hygiene for Small Shopkeepers: A Perspective from Bangladesh",
     venue: "JSM Environmental Science & Ecology",
     year: "2017",
+    href: "https://doi.org/10.47739/2333-7141/1041",
   },
   {
     title: "Chronological History and Destruction Pattern of Tornados in Bangladesh",
     venue: "American Journal of Environmental Protection",
     year: "2016",
+    href: "https://doi.org/10.11648/j.ajep.20160504.11",
   },
   {
     title: "WASH Condition of Small Shopkeepers in Dhaka City",
@@ -392,5 +447,5 @@ export const aboutMedia: {
   videoPoster?: string;
 } = {
   portrait: "/images/profile/abu-jubayer-impact.jpg",
-  fieldPortrait: "/images/profile/abu-jubayer-speaking-close.jpg",
+  fieldPortrait: "/images/profile/haor.jpg",
 };

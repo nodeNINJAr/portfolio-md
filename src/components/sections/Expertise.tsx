@@ -35,6 +35,16 @@ export function Expertise() {
           </Reveal>
         ))}
       </div>
+      <div className="mt-10 grid gap-5 border-t border-dashed border-black/20 pt-8 sm:grid-cols-2">
+        <div>
+          <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-ink">Tools &amp; analysis</h3>
+          <p className="mt-3 text-sm leading-relaxed text-stone">SPSS for statistical analysis; advanced Excel and Microsoft Access for data and land records; GIS and remote sensing for thematic maps; DGPS / RTK GPS for ground truthing; hydrological, flood inundation, air quality, surface-water, and groundwater modelling.</p>
+        </div>
+        <div>
+          <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-ink">Standards &amp; frameworks</h3>
+          <p className="mt-3 text-sm leading-relaxed text-stone">ADB safeguard requirements, Bangladesh environmental rules, ISO 14001, climate policy commitments, and carbon accounting standards.</p>
+        </div>
+      </div>
     </>
   );
 }

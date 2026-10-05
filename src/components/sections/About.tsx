@@ -1,4 +1,5 @@
 import { aboutMedia } from "@/lib/data";
+import Image from "next/image";
 import { ProfilePortrait } from "../ui/ProfilePortrait";
 import { ArrowUpRight, MapPin, Film } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
@@ -83,7 +84,11 @@ export function About() {
 
       <div className="mt-14 grid items-center gap-8 border-t border-dashed border-black/20 pt-12 xl:grid-cols-[1.15fr_0.85fr]">
         <figure className="xl:order-2">
-          <ProfilePortrait src={aboutMedia.fieldPortrait} label="Abu Jubayer — in the field" />
+          {aboutMedia.fieldPortrait && (
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-dashed border-black/20">
+              <Image src={aboutMedia.fieldPortrait} alt="Field team on a boat during a haor site visit" fill sizes="(min-width: 1280px) 22vw, (min-width: 768px) 50vw, 90vw" className="object-cover" />
+            </div>
+          )}
           <figcaption className="mt-4 flex items-center gap-3 text-xs font-medium text-stone">
             <span className="h-px w-8 bg-[#CCED00]" /> Practice, people &amp; perspective
           </figcaption>

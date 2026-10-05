@@ -4,7 +4,9 @@ import { SectionRail } from "@/components/layout/SectionRail";
 import { SectionTabs } from "@/components/layout/SectionTabs";
 import { Hero } from "@/components/sections/Hero";
 import { FocusBand } from "@/components/sections/FocusBand";
+import { OrganizationsBand } from "@/components/sections/OrganizationsBand";
 import { About } from "@/components/sections/About";
+import { Services } from "@/components/sections/Services";
 import { AtAGlance } from "@/components/sections/AtAGlance";
 import { Expertise } from "@/components/sections/Expertise";
 import { Projects } from "@/components/sections/Projects";
@@ -40,6 +42,22 @@ const storyBlocks: StoryBlock[] = [
     bg: "bg-cream",
     image: "/images/profile/abu-jubayer.jpg",
     content: <About />,
+  },
+  {
+    kind: "panel",
+    id: "organisations",
+    label: "Organisations & Institutions",
+    bg: "bg-[#141414]",
+    image: "/images/story/expertise.jpg",
+    content: <OrganizationsBand />,
+  },
+  {
+    kind: "panel",
+    id: "services",
+    label: "What I Can Do",
+    bg: "bg-cream",
+    image: "/images/story/projects.jpg",
+    content: <Services />,
   },
   {
     kind: "panel",

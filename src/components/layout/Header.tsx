@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { navLinks, site } from "@/lib/data";
 import { SectionTabs } from "./SectionTabs";
 
@@ -136,20 +136,16 @@ export function Header() {
                 ))}
               </nav>
 
-              <motion.a
+              <a
                 href={site.cvHref}
+                download
                 onClick={() => setOpen(false)}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.15 + navLinks.length * 0.05,
-                  ease,
-                }}
-                className="mt-10 inline-block w-fit text-sm font-medium uppercase tracking-[0.08em] px-6 py-3.5 border border-cream/35 rounded-sm hover:bg-cream hover:text-navy transition-colors"
+                className="mt-8 inline-flex w-fit items-center justify-center gap-3 rounded-full bg-[#CCED00] px-6 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#CCED00]"
               >
+                <Download size={16} aria-hidden="true" />
                 Download CV
-              </motion.a>
+              </a>
+
             </motion.div>
           </>
         )}

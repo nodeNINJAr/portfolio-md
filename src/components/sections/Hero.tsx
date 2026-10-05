@@ -25,7 +25,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#050716]/70 via-transparent to-transparent md:hidden" />
 
       <div
-        className="relative z-10 ml-6 mr-6 mt-20 w-full border-l-[4px] border-[#CCED00] py-2 pl-5 text-white sm:ml-10 sm:mr-10 sm:pl-6 md:ml-[8%] md:mr-auto md:mt-12 md:w-[58%]"
+        className="relative z-10 ml-6 mr-6 mt-8 w-full border-l-[4px] border-[#CCED00] py-2 pl-5 text-white sm:ml-10 sm:mr-10 sm:pl-6 md:ml-[8%] md:mr-auto md:mt-12 md:w-[58%]"
       >
         <h1
           id="hero-title"
@@ -37,6 +37,21 @@ export function Hero() {
           <span className="block">{site.title}</span>
           <span className="mt-1 block text-white/80">{site.subtitle}</span>
         </p>
+        <div className="mt-7 flex flex-wrap items-center gap-3">
+          <a
+            href={site.cvHref}
+            download
+            className="inline-flex items-center justify-center rounded-full bg-[#CCED00] px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-black transition-transform hover:-translate-y-0.5 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#CCED00]"
+          >
+            Download CV
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-full border border-white/70 bg-black/20 px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition-colors hover:border-[#CCED00] hover:bg-[#CCED00] hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#CCED00]"
+          >
+            Contact Me
+          </a>
+        </div>
       </div>
     </section>
   );

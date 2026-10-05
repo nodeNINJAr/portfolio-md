@@ -36,6 +36,7 @@ export function Contact() {
             </a>
             <a
               href={site.cvHref}
+              download
               className="px-7 py-4 border border-dashed border-black/30 text-ink text-sm font-semibold rounded-full hover:bg-black hover:text-white transition-colors"
             >
               Download CV

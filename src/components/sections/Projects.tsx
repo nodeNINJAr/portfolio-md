@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Plus } from "lucide-react";
 import { useState } from "react";
-import { projects } from "@/lib/data";
+import { caseStudies, projects } from "@/lib/data";
 import { Reveal } from "../ui/Reveal";
 import { SectionHeading } from "../ui/SectionHeading";
 
@@ -19,7 +19,27 @@ export function Projects() {
           ghost="Work"
         />
 
-        <div className="mt-12 space-y-4">
+        <div className="mt-12 space-y-6">
+          {caseStudies.map((study, index) => (
+            <Reveal key={study.project}>
+              <article className="rounded-2xl border border-dashed border-black/25 p-6 sm:p-8">
+                <p className="text-xs font-bold uppercase tracking-wider text-stone">Case study {String(index + 1).padStart(2, "0")} / {study.project}</p>
+                <h3 className="mt-3 text-2xl font-semibold leading-snug">{study.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-stone">{study.organization}<br />{study.location} · {study.period}</p>
+                <dl className="mt-6 space-y-5 border-t border-black/10 pt-6">
+                  {[["The challenge", study.problem], ["My contribution", study.approach], ["Documented outputs", study.output]].map(([label, detail]) => (
+                    <div key={label}>
+                      <dt className="text-xs font-bold uppercase tracking-wider">{label}</dt>
+                      <dd className="mt-2 text-sm leading-relaxed text-ink/75">{detail}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+        <h3 className="mt-12 text-xs font-bold uppercase tracking-wider text-stone">Explore all engagements</h3>
+        <div className="mt-6 space-y-4">
           {projects.map((project, i) => {
             const isOpen = openIndex === i;
             return (
@@ -88,6 +108,7 @@ export function Projects() {
                         className="relative overflow-hidden"
                       >
                         <div className="pb-8 pl-6 max-w-2xl">
+                          {project.location && <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-stone">{project.location}</p>}
                           <p className="text-ink/70 leading-relaxed">
                             {project.description}
                           </p>

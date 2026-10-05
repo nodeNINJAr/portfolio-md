@@ -21,6 +21,7 @@ export function Journey() {
         </span>
       </div>
 
+      <p className="mt-5 text-xs leading-relaxed text-stone">Some consultancy and research assignments overlap. Grouped employer entries retain the dates of each separate assignment.</p>
       <ol aria-label="Career timeline, latest first" className="mt-8">
         {journey.map((role, i) => {
           const isCurrent = role.period?.includes("Present") ?? false;
